@@ -403,7 +403,7 @@ protected:
         do {
             if (_write_some()) {
                 _op_start_time = millis();
-            }
+            }// HARDWARE AND MEMORY CHECK NEED TO BE IMPLEMENTED HERE, ESP should be forced to reset instead of just getting stuck because of low heap space.
 
             if (!_datasource->available() || _is_timeout() || state() == CLOSED) {
                 if (_is_timeout()) {
